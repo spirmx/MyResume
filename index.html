@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Sorasak Sonkrai - IT Student & Cybersecurity Enthusiast">
   <title>Sorasak Sonkrai — Portfolio</title>
+  
+  <link rel="icon" href="assets/compressed_image.jpg" type="image/x-icon">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <!-- Main CSS -->
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="brand">SPIRMXTH</a>
-
+      <a href="#home" class="brand">SPIRMXTH<span style="color:var(--accent)">.DEV</span></a>
       <nav class="links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -27,380 +28,234 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <!-- Toggle Lang (About + Highlights) -->
-      <button id="langToggle" class="btn btn-outline" aria-label="toggle language">EN</button>
-
-      <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener">
-        <i class="fa-solid fa-download"></i> Download Resume
-      </a>
-
-      <button id="navToggle" class="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
+      <div class="nav-actions">
+        <a href="assets/resume.pdf" target="_blank" class="btn btn-outline btn-resume">
+            <i class="fa-solid fa-download"></i> <span class="res-txt">Resume</span>
+        </a>
+        <button id="langToggle" class="btn btn-outline">EN</button>
+        <button id="navToggle" class="hamburger"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-inner">
-      <h1 class="title">SORASAK SONKRAI</h1>
+    <div class="hero-bg"></div> 
+    <div class="hero-overlay"></div> <div class="particles">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+    </div>
 
-      <!-- แทนที่ subtitle เดิมด้วยแบดจ์ SPU -->
-      <p class="subtitle">
-        <span class="spu-badge" aria-label="Sripatum University">
-          <span class="from">From</span>
+    <div class="container hero-inner">
+      <h1 class="title animate-pop-in">SORASAK SONKRAI</h1>
+      
+      <p class="subtitle animate-fade-in-up delay-100">
+        <span class="spu-badge">
+          <span class="from">Student at</span>
           <span class="spu-text">Sripatum University</span>
         </span>
       </p>
+
+      <div class="typing-container animate-fade-in-up delay-200">
+        I am a <span id="typing-text"></span><span class="cursor">|</span>
+      </div>
     </div>
 
-    <div class="avatar-wrap">
-      <img class="avatar" src="assets/profile.jpg" alt="Sorasak" loading="lazy">
+    <div class="avatar-wrap float-anim">
+      <img class="avatar" src="assets/compressed_image.jpg" alt="Sorasak">
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section">
+  <section id="about" class="section reveal">
     <div class="container grid-2">
       <div>
-        <h2 class="section-title">About</h2>
+        <h2 class="section-title">About Me</h2>
         <div class="underbar"></div>
 
-        <!-- TH (ห้ามแก้) -->
         <div class="lang-th">
           <p>
-            สวัสดีครับ ผม <strong>สรศักดิ์ ศรไกร</strong> นักศึกษาสายไอทีที่ชอบการพัฒนาและระบบหลังบ้าน สนใจการวางโครงข่ายและดูแลระบบเซิร์ฟเวอร์ภายในองค์กร ชื่นชอบเรื่อง <strong>Cybersecurity</strong> เป็นพิเศษ ปัจจุบันมีประสบการณ์เล็กน้อยครับ และกำลังพัฒนาทักษะต่อเนื่อง เป็นคนชอบลองสิ่งใหม่ ๆ และมักลงมือศึกษาให้ลึกจนใช้งานได้จริง
+            สวัสดีครับ ผม <strong>สรศักดิ์ ศรไกร</strong> นักศึกษาสายไอทีที่มีความสนใจอย่างลึกซึ้งในด้าน <strong>Cybersecurity</strong> และ <strong>Network Infrastructure</strong> ผมชอบเปลี่ยนความท้าทายให้เป็นประสบการณ์ และพร้อมเรียนรู้เทคโนโลยีใหม่ๆ เพื่อนำมาประยุกต์ใช้งานจริง
           </p>
         </div>
-
-        <!-- EN -->
         <div class="lang-en" style="display:none">
           <p>
-            Hi! I’m <strong>Sorasak Sonkrai</strong>, an IT student who enjoys backend development and server/network infrastructure.
-            I’m especially interested in <strong>cybersecurity</strong> and on-prem system operations.
-          </p>
-          <p>
-            My current experience is at an entry-to-intermediate level and I continuously improve.
-            I love exploring new technologies and studying them deeply until they become practical skills I can use in real projects.
+            Hi! I’m <strong>Sorasak Sonkrai</strong>, an IT student passionate about <strong>Cybersecurity</strong> and <strong>Network Infrastructure</strong>. I enjoy turning challenges into experience and am always eager to learn new technologies for real-world application.
           </p>
         </div>
 
         <ul class="facts">
-          <li><i class="fa-regular fa-envelope"></i> <a href="mailto:sorasakx2530@outlook.co.th">sorasakx2530@outlook.co.th</a></li>
-          <li><i class="fa-solid fa-phone"></i> <a href="tel:0928983633">092-898-3633</a></li>
-          <li><i class="fa-brands fa-github"></i> <a href="https://github.com/spirmx" target="_blank" rel="noopener">github.com/spirmx</a></li>
+          <li><i class="fa-regular fa-envelope"></i> sorasakx2530@outlook.co.th</li>
+          <li><i class="fa-brands fa-github"></i> github.com/spirmx</li>
         </ul>
       </div>
 
-      <div class="about-card">
-        <h3>Highlights</h3>
-
-        <!-- TH (ห้ามแก้ข้อความ) -->
+      <div class="about-card reveal delay-100">
+        <h3><i class="fa-solid fa-bolt" style="color:#f59e0b"></i> Highlights</h3>
         <ul class="lang-th">
-          <li>รักการเรียนรู้สิ่งใหม่ ๆ และชอบการค้นคว้าที่ลึกซึ้ง</li>
-          <li>ทำงานเป็นทีมได้ และชอบการสื่อสารกับทีม</li>
-          <li>สนใจงานด้าน Cybersecurity และระบบเครือข่ายเป็นพิเศษ</li>
-          <li>พร้อมเปิดรับโอกาสฝึกงานและโปรเจ็กต์พิเศษ</li>
+          <li>สนใจระบบความปลอดภัยไซเบอร์</li>
+          <li>ชอบเรียนรู้ด้วยตนเอง (Self-Learner)</li>
+          <li>ทำงานเป็นทีมและสื่อสารได้ดี</li>
+          <li>กำลังมองหาที่ฝึกงานสหกิจศึกษา</li>
         </ul>
-
-        <!-- EN (เพื่อรองรับสลับภาษา) -->
         <ul class="lang-en" style="display:none">
-          <li>A self-learner who enjoys deep exploration</li>
-          <li>Team-oriented with clear communication</li>
-          <li>Strong interest in cybersecurity and network systems</li>
-          <li>Open to internships and special projects</li>
+          <li>Focus on Cybersecurity & Network</li>
+          <li>Strong Self-Learning Ability</li>
+          <li>Great Teamwork & Communication</li>
+          <li>Open for Internship Opportunities</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="section alt">
+  <section id="education" class="section alt reveal">
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="underbar"></div>
       <div class="timeline">
-        <div class="tl-item">
+        <div class="tl-item reveal-left">
           <div class="tl-dot"></div>
           <div class="tl-content">
             <h4>Sripatum University</h4>
-            <p class="muted">คณะเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) — B.Sc. • 2023 – Present</p>
-            <p>เน้น Database, Web Development, ระบบเครือข่าย และการพัฒนาเว็บแอป</p>
+            <p class="muted">B.Sc. Information Technology • 2023 – Present</p>
+            <p>Database, Web Development, Network System</p>
           </div>
         </div>
-        <div class="tl-item">
+        <div class="tl-item reveal-left delay-100">
           <div class="tl-dot"></div>
           <div class="tl-content">
             <h4>U-Thong School</h4>
-            <p class="muted">2017 – 2022</p>
-            <p>มัธยม ต้น - ปลาย สายวิทย์ - คณิต</p>
+            <p class="muted">High School (Science-Math) • 2017 – 2022</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
+  <section id="skills" class="section reveal">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Technical Skills</h2>
       <div class="underbar"></div>
 
-      <!-- กล่องหมวดทักษะ + ไอคอนสีเฉพาะ -->
       <div class="skill-categories">
-
-        <!-- Frontend -->
-        <div class="skill-box">
-          <div class="skill-head">
-            <i class="fa-solid fa-code cat-icon cat-frontend" aria-hidden="true"></i>
-            <h3>Frontend</h3>
-          </div>
-          <ul>
-            <li>HTML (Basic - Intermediate)</li>
-            <li>CSS (Basic)</li>
-            <li>JavaScript (Basic)</li>
-            <li>Google AppSheet (Intermediate)</li>
-          </ul>
+        <div class="skill-box reveal-scale">
+          <div class="skill-head"><i class="fa-solid fa-code cat-icon cat-frontend"></i><h3>Frontend</h3></div>
+          <ul><li>HTML5 / CSS3</li><li>JavaScript</li><li>Bootstrap</li></ul>
         </div>
-
-        <!-- Backend -->
-        <div class="skill-box">
-          <div class="skill-head">
-            <i class="fa-solid fa-server cat-icon cat-backend" aria-hidden="true"></i>
-            <h3>Backend</h3>
-          </div>
-          <ul>
-            <li>PHP (Basic)</li>
-            <li>Java (Basic)</li>
-            <li>Python (Basic)</li>
-          </ul>
+        <div class="skill-box reveal-scale delay-100">
+          <div class="skill-head"><i class="fa-solid fa-server cat-icon cat-backend"></i><h3>Backend</h3></div>
+          <ul><li>PHP</li><li>Python</li><li>Java (Basic)</li></ul>
         </div>
-
-        <!-- Database -->
-        <div class="skill-box">
-          <div class="skill-head">
-            <i class="fa-solid fa-database cat-icon cat-database" aria-hidden="true"></i>
-            <h3>Database</h3>
-          </div>
-          <ul>
-            <li>MySQL (Intermediate)</li>
-          </ul>
+        <div class="skill-box reveal-scale delay-200">
+          <div class="skill-head"><i class="fa-solid fa-database cat-icon cat-database"></i><h3>Database</h3></div>
+          <ul><li>MySQL</li><li>AppSheet</li></ul>
         </div>
-
-        <!-- Tools -->
-        <div class="skill-box">
-          <div class="skill-head">
-            <i class="fa-solid fa-screwdriver-wrench cat-icon cat-tools" aria-hidden="true"></i>
-            <h3>Tools</h3>
-          </div>
-          <ul>
-            <li>Docker (Basic) </li>
-            <li>GitHub Actions (Basic)</li>
-            <li>Microsoft Word, Excel, PowerPoint (Intermediate) </li>
-            <li>Cisco Packet  (Intermediate)</li>
-            <li>Kali Linux, Ubuntu (Basic)</li>
-          </ul>
-        </div>
-
-        <!-- Soft Skills -->
-        <div class="skill-box">
-          <div class="skill-head">
-            <i class="fa-solid fa-people-group cat-icon cat-soft" aria-hidden="true"></i>
-            <h3>Soft Skills</h3>
-          </div>
-          <ul>
-            <li>Teamwork & Communication</li>
-            <li>Self-Learning</li>
-            <li>Problem Solving</li>
-            <li>Adaptability</li>
-          </ul>
+        <div class="skill-box reveal-scale delay-300">
+          <div class="skill-head"><i class="fa-solid fa-shield-halved cat-icon cat-tools"></i><h3>Security & Tools</h3></div>
+          <ul><li>Kali Linux</li><li>Cisco Packet Tracer</li><li>Git / GitHub</li></ul>
         </div>
       </div>
 
-      <hr>
-
-      <!-- Bars -->
-      <div class="bars">
-        <div class="bar"><label>Frontend</label><div style="--v:49%"></div></div>
-        <div class="bar"><label>Backend</label><div style="--v:42%"></div></div>
-        <div class="bar"><label>Database</label><div style="--v:50%"></div></div>
-        <div class="bar"><label>Soft Skills</label><div style="--v:87%"></div></div>
-        <div class="bar"><label>Tools</label><div style="--v:70%"></div></div>
+      <div class="bars" style="margin-top:40px">
+        <div class="bar-wrap">
+          <div class="bar-info"><label>Frontend Dev</label><span>50%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="50%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-info"><label>Backend & DB</label><span>45%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="45%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-info"><label>Network & Security</label><span>60%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="60%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-info"><label>Soft Skills</label><span>85%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="section alt">
+  <section id="portfolio" class="section alt reveal">
     <div class="container">
       <h2 class="section-title">Portfolio</h2>
       <div class="underbar"></div>
       <div class="gallery">
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <img src="assets/p1.jpg" alt="Project 1" loading="lazy"><div class="card-t">Project 1</div>
+        <a class="card tilt-card reveal-card" href="#" target="_blank">
+          <img src="https://placehold.co/600x400/1e293b/FFF?text=PAPAYA+SHOP" alt="Project 1">
+          <div class="card-overlay">
+            <div class="card-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <div class="card-t">PAPAYA SHOP (E-Commerce)</div>
+          </div>
         </a>
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <img src="assets/p2.jpg" alt="Project 2" loading="lazy"><div class="card-t">Project 2</div>
+        <a class="card tilt-card reveal-card delay-100" href="#" target="_blank">
+          <img src="https://placehold.co/600x400/1e293b/FFF?text=Login+System" alt="Project 2">
+          <div class="card-overlay">
+            <div class="card-tags"><span>PHP</span><span>MySQL</span></div>
+            <div class="card-t">Member Login System</div>
+          </div>
         </a>
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <img src="assets/p3.jpg" alt="Project 3" loading="lazy"><div class="card-t">Project 3</div>
+        <a class="card tilt-card reveal-card delay-200" href="#" target="_blank">
+          <img src="https://placehold.co/600x400/1e293b/FFF?text=Network+Design" alt="Project 3">
+          <div class="card-overlay">
+            <div class="card-tags"><span>Cisco</span><span>Packet Tracer</span></div>
+            <div class="card-t">Network Infrastructure Design</div>
+          </div>
         </a>
-        <a class="card" href="#" target="_blank" rel="noopener">
-          <img src="assets/p4.jpg" alt="Project 4" loading="lazy"><div class="card-t">Project 4</div>
+        <a class="card tilt-card reveal-card delay-300" href="#" target="_blank">
+          <img src="https://placehold.co/600x400/1e293b/FFF?text=Inventory+App" alt="Project 4">
+          <div class="card-overlay">
+            <div class="card-tags"><span>AppSheet</span><span>No-Code</span></div>
+            <div class="card-t">Inventory Management</div>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
+  <section id="contact" class="section reveal">
     <div class="container grid-2">
       <div>
         <h2 class="section-title">Contact</h2>
         <div class="underbar"></div>
-        <p>พร้อมร่วมงาน/ฝึกงาน และโปรเจกต์พิเศษ ติดต่อได้ทุกช่องทางด้านล่าง</p>
+        <p>พร้อมเรียนรู้งานและร่วมงานเสมอครับ ติดต่อผมได้ที่ช่องทางด้านล่าง</p>
 
         <ul class="facts contact-list">
-          <li class="contact-item">
-            <i class="contact-icon icon--line fa-brands fa-line"></i>
-            <span class="contact-text"><strong>Phiarmy</strong></span>
-          </li>
-          <li class="contact-item">
-            <a class="contact-link" href="https://facebook.com/hiyturbrp" target="_blank" rel="noopener">
-              <i class="contact-icon icon--facebook fa-brands fa-facebook"></i>
-              <span class="contact-text"><strong>บุรุษ แห่งเมคลี</strong></span>
-            </a>
-          </li>
-          <li class="contact-item">
-            <a class="contact-link" href="https://www.linkedin.com/in/spirmx" target="_blank" rel="noopener">
-              <i class="contact-icon icon--linkedin fa-brands fa-linkedin"></i>
-              <span class="contact-text"><strong>Sorasak Sonkrai</strong></span>
-            </a>
-          </li>
-          <li class="contact-item">
-            <i class="contact-icon icon--location fa-solid fa-location-dot"></i>
-            <span class="contact-text">Bangkok, Thailand</span>
-          </li>
+          <li class="contact-item"><i class="contact-icon icon-fb fa-brands fa-facebook"></i> <a href="https://facebook.com/hiyturbrp" target="_blank">บุรุษ แห่งเมคลี</a></li>
+          <li class="contact-item"><i class="contact-icon icon-li fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/spirmx" target="_blank">Sorasak Sonkrai</a></li>
+          <li class="contact-item"><i class="contact-icon icon-loc fa-solid fa-location-dot"></i> Bangkok, Thailand</li>
         </ul>
       </div>
-
+      
       <form class="contact-form" onsubmit="return sendMsg(event)">
         <input type="text" name="name" placeholder="ชื่อของคุณ" required>
         <input type="email" name="email" placeholder="อีเมล" required>
-        <textarea name="message" rows="5" placeholder="ข้อความ" required></textarea>
-        <button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i> ส่งข้อความ</button>
+        <textarea name="message" rows="5" placeholder="ข้อความ..." required></textarea>
+        <button class="btn btn-primary" type="submit"><i class="fa-regular fa-paper-plane"></i> ส่งข้อความ</button>
       </form>
     </div>
   </section>
 
-  <!-- Floating Chat (เปิด Modal QR) -->
-  <button class="chat" id="openModal">Let's Chat!</button>
+  <button class="chat-btn" id="openModal">Let's Chat!</button>
+  <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
-  <!-- Modal QR -->
-  <div id="qrModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+  <div id="stickyProfile" class="sticky-profile">
+    <img src="assets/compressed_image.jpg" alt="Profile">
+    <span class="name">Sorasak Sonkrai</span>
+  </div>
+
+  <div id="qrModal" class="modal">
     <div class="modal-content">
-      <span class="close" id="closeModal" aria-label="Close">&times;</span>
-      <h3 id="qrTitle">Scan QR Code</h3>
-      <img src="assets/qrcode.jpg" alt="Line QR Code" class="qr-img" loading="lazy">
-      <a href="assets/qrcode.jpg" download="qrcode.png" class="btn" style="margin-top:12px;">
-        <i class="fa-solid fa-download"></i> Download QR
-      </a>
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Scan to Chat</h3>
+      <img src="assets/qrcode.jpg" alt="Line QR" class="qr-img">
+      <p style="margin-top:10px; color:#64748b">LINE ID: Phiarmy</p>
     </div>
   </div>
 
   <footer class="footer">
-    <div class="container">
-      © <span id="y"></span> Sorasak Sonkrai • Built with HTML/CSS/JS
-    </div>
+    <div class="container">© <span id="year"></span> Sorasak Sonkrai</div>
   </footer>
 
-  <!-- Sticky Profile Floating Header -->
-  <div id="stickyProfile" class="sticky-profile" aria-live="polite">
-    <img src="assets/profile.jpg" alt="Profile" loading="lazy">
-    <span class="name">Sorasak Sonkrai</span>
-  </div>
-
-  <script>
-    // footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // mobile menu
-    const navToggle = document.getElementById('navToggle');
-    const links = document.querySelector('.links');
-    if (navToggle) navToggle.addEventListener('click', ()=> links.classList.toggle('open'));
-
-    // Toggle language (About + Highlights)
-    const btn = document.getElementById("langToggle");
-    const showTH = () => {
-      document.querySelectorAll(".lang-th").forEach(el => el.style.display = "block");
-      document.querySelectorAll(".lang-en").forEach(el => el.style.display = "none");
-      btn.textContent = "EN";
-    };
-    const showEN = () => {
-      document.querySelectorAll(".lang-th").forEach(el => el.style.display = "none");
-      document.querySelectorAll(".lang-en").forEach(el => el.style.display = "block");
-      btn.textContent = "TH";
-    };
-    showTH();
-    btn.addEventListener("click", () => (btn.textContent === "EN" ? showEN() : showTH()));
-
-    // contact form (mailto)
-    function sendMsg(e){
-      e.preventDefault();
-      const f = e.target;
-      const subject = encodeURIComponent("Portfolio Contact: " + f.name.value);
-      const body = encodeURIComponent(f.message.value + "\n\nFrom: " + f.name.value + " <" + f.email.value + ">");
-      window.location.href = `mailto:sorasakx2530@outlook.co.th?subject=${subject}&body=${body}`;
-      f.reset();
-      return false;
-    }
-
-    // smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length>1){
-          const el = document.querySelector(id);
-          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-        }
-      });
-    });
-
-    // Sticky profile: show after threshold + expand on scroll down, collapse on scroll up
-    const stickyProfile = document.getElementById("stickyProfile");
-    let lastY = window.scrollY;
-    const THRESHOLD = 250;
-    const DELTA = 4;
-
-    function onScroll(){
-      const y = window.scrollY;
-
-      if (y > THRESHOLD) {
-        stickyProfile.classList.add("show");
-      } else {
-        stickyProfile.classList.remove("show");
-        stickyProfile.classList.remove("expanded");
-      }
-
-      if (y > THRESHOLD) {
-        if (y > lastY + DELTA) {
-          stickyProfile.classList.add("expanded");    // เลื่อนลง
-        } else if (y < lastY - DELTA) {
-          stickyProfile.classList.remove("expanded"); // เลื่อนขึ้น
-        }
-      }
-
-      lastY = y;
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    // Modal QR
-    const modal = document.getElementById("qrModal");
-    const btnOpen = document.getElementById("openModal");
-    const btnClose = document.getElementById("closeModal");
-    btnOpen.addEventListener("click", ()=> modal.style.display = "flex");
-    btnClose.addEventListener("click", ()=> modal.style.display = "none");
-    window.addEventListener("click", (e)=>{ if(e.target===modal) modal.style.display="none"; });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
