@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Typing Effect
+  
+  // ------------------- 1. Typing Effect -------------------
   const typingElement = document.getElementById("typing-text");
   const roles = ["IT Student.", "Cybersecurity Enthusiast.", "Network Lover.", "Future Developer."];
   let roleIndex = 0;
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function type() {
     if (!typingElement) return;
     const currentRole = roles[roleIndex];
+    
     if (isDeleting) {
       typingElement.textContent = currentRole.substring(0, charIndex - 1);
       charIndex--;
@@ -16,22 +18,30 @@ document.addEventListener("DOMContentLoaded", () => {
       typingElement.textContent = currentRole.substring(0, charIndex + 1);
       charIndex++;
     }
+    
     let typeSpeed = isDeleting ? 50 : 100;
+    
     if (!isDeleting && charIndex === currentRole.length) {
-      typeSpeed = 2000; isDeleting = true;
+      typeSpeed = 2000; 
+      isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
-      isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; typeSpeed = 500;
+      isDeleting = false; 
+      roleIndex = (roleIndex + 1) % roles.length; 
+      typeSpeed = 500;
     }
+    
     setTimeout(type, typeSpeed);
   }
   type();
 
-  // 2. Scroll Animation & Progress Bar
+  // ------------------- 2. Scroll Animation & Progress Bar -------------------
   const progressBar = document.getElementById("progress-bar");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
+        
+        // Trigger Skill Bar Animation
         if (entry.target.id === "skills") {
           document.querySelectorAll(".bar-fill").forEach(bar => {
             bar.style.width = bar.getAttribute("data-width");
@@ -40,12 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, { threshold: 0.15 });
+  
+  // Observe elements for the reveal animation
   document.querySelectorAll(".reveal, .reveal-left, .reveal-card, .reveal-scale, #skills").forEach(el => observer.observe(el));
 
-  // 3. Navbar, Sticky Logic & Progress Calculation
+  // ------------------- 3. Navbar, Sticky Logic & Progress Calculation -------------------
   const navbar = document.querySelector(".navbar");
   const stickyProfile = document.getElementById("stickyProfile");
   const backToTop = document.getElementById("backToTop");
+  const avatarWrap = document.querySelector(".avatar-wrap");
+  
+  if (avatarWrap) avatarWrap.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out'; 
 
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
@@ -53,13 +68,24 @@ document.addEventListener("DOMContentLoaded", () => {
     // Navbar Shadow
     navbar.style.boxShadow = y > 50 ? "0 4px 20px rgba(0,0,0,0.1)" : "none";
     
-    // Sticky Profile Show/Hide
+    // Sticky Profile & BackToTop Show/Hide
     if (y > 400) {
       stickyProfile.classList.add("show");
       backToTop.classList.add("show");
     } else {
       stickyProfile.classList.remove("show");
       backToTop.classList.remove("show");
+    }
+
+    // Avatar Wrap Hide (ป้องกันการทับซ้อน)
+    if (avatarWrap) {
+        if (y > 350) { 
+            avatarWrap.style.opacity = '0';
+            avatarWrap.style.pointerEvents = 'none'; 
+        } else {
+            avatarWrap.style.opacity = '1';
+            avatarWrap.style.pointerEvents = 'auto'; 
+        }
     }
 
     // Scroll Progress Calculation
@@ -69,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(progressBar) progressBar.style.width = scrolled + "%";
   });
 
-  // 4. 3D Tilt Effect for Cards (ลูกเล่นเอียงการ์ด)
+  // ------------------- 4. 3D Tilt Effect for Cards -------------------
   const cards = document.querySelectorAll(".tilt-card");
   cards.forEach(card => {
     card.addEventListener("mousemove", (e) => {
@@ -79,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const w = rect.width;
       const h = rect.height;
       
-      // คำนวณองศาการเอียง (-15deg ถึง 15deg)
       const rotateX = ((y / h) - 0.5) * -15; 
       const rotateY = ((x / w) - 0.5) * 15;
 
@@ -91,11 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. Utilities
+  // ------------------- 5. Utilities & Modals -------------------
+  
+  // Mobile Nav Toggle
   const navToggle = document.getElementById('navToggle');
   const links = document.querySelector('.links');
   if(navToggle) navToggle.addEventListener('click', () => links.classList.toggle('open'));
 
+  // Language Toggle
   const btnLang = document.getElementById("langToggle");
   if(btnLang) {
     btnLang.addEventListener("click", () => {
@@ -106,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // QR Modal Logic
   const modal = document.getElementById("qrModal");
   const openModal = document.getElementById("openModal");
   const closeModal = document.getElementById("closeModal");
@@ -115,10 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
   }
 
+  // Set Current Year
   document.getElementById('year').textContent = new Date().getFullYear();
-  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  
+  // Back to Top Function
+  if(backToTop) backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 });
 
+// Contact Form Submission
 function sendMsg(e) {
   e.preventDefault();
   const f = e.target;

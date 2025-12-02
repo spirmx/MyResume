@@ -6,16 +6,16 @@
   <meta name="description" content="Portfolio of Sorasak Sonkrai - IT Student & Cybersecurity Enthusiast">
   <title>Sorasak Sonkrai — Portfolio</title>
   
-  <link rel="icon" href="assets/compressed_image.jpg" type="image/x-icon">
-
+  <link rel="icon" href="assets/profile.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div id="progress-container"><div id="progress-bar"></div></div>
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
 
   <header class="navbar">
     <div class="container nav-inner">
@@ -40,12 +40,13 @@
 
   <section id="home" class="hero">
     <div class="hero-bg"></div> 
-    <div class="hero-overlay"></div> <div class="particles">
+    <div class="hero-overlay"></div> 
+    <div class="particles">
         <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
         <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
     </div>
 
-    <div class="container hero-inner">
+    <div class="container hero-inner" style="z-index: 10;">
       <h1 class="title animate-pop-in">SORASAK SONKRAI</h1>
       
       <p class="subtitle animate-fade-in-up delay-100">
@@ -60,9 +61,9 @@
       </div>
     </div>
 
-    <div class="avatar-wrap float-anim">
-      <img class="avatar" src="assets/compressed_image.jpg" alt="Sorasak">
-    </div>
+    <a href="#about" class="avatar-wrap float-anim" aria-label="Go to About Section">
+      <img class="avatar" src="assets/profile.jpg" alt="Sorasak">
+    </a>
   </section>
 
   <section id="about" class="section reveal">
@@ -138,7 +139,7 @@
       <div class="skill-categories">
         <div class="skill-box reveal-scale">
           <div class="skill-head"><i class="fa-solid fa-code cat-icon cat-frontend"></i><h3>Frontend</h3></div>
-          <ul><li>HTML5 / CSS3</li><li>JavaScript</li><li>Bootstrap</li></ul>
+          <ul><li>HTML5 / CSS3</li><li>JavaScript</li><li><li>Bootstrap</li></ul>
         </div>
         <div class="skill-box reveal-scale delay-100">
           <div class="skill-head"><i class="fa-solid fa-server cat-icon cat-backend"></i><h3>Backend</h3></div>
@@ -151,6 +152,10 @@
         <div class="skill-box reveal-scale delay-300">
           <div class="skill-head"><i class="fa-solid fa-shield-halved cat-icon cat-tools"></i><h3>Security & Tools</h3></div>
           <ul><li>Kali Linux</li><li>Cisco Packet Tracer</li><li>Git / GitHub</li></ul>
+        </div>
+        <div class="skill-box reveal-scale delay-400"> 
+          <div class="skill-head"><i class="fa-solid fa-robot cat-icon cat-ai"></i><h3>AI/LLM Use</h3></div>
+          <ul><li>Prompt Engineering</li><li>Google Gemini (Use)</li><li>Open Source AI (Basic)</li></ul>
         </div>
       </div>
 
@@ -168,8 +173,8 @@
           <div class="bar-track"><div class="bar-fill" data-width="60%"></div></div>
         </div>
         <div class="bar-wrap">
-          <div class="bar-info"><label>Soft Skills</label><span>85%</span></div>
-          <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
+          <div class="bar-info"><label>AI/LLM & Soft Skills</label><span>70%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="70%"></div></div>
         </div>
       </div>
     </div>
@@ -180,33 +185,38 @@
       <h2 class="section-title">Portfolio</h2>
       <div class="underbar"></div>
       <div class="gallery">
-        <a class="card tilt-card reveal-card" href="#" target="_blank">
+        <a class="card tilt-card reveal-card" href="portfolio-detail.html?project=papaya" target="_blank">
           <img src="https://placehold.co/600x400/1e293b/FFF?text=PAPAYA+SHOP" alt="Project 1">
           <div class="card-overlay">
             <div class="card-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
             <div class="card-t">PAPAYA SHOP (E-Commerce)</div>
           </div>
         </a>
-        <a class="card tilt-card reveal-card delay-100" href="#" target="_blank">
+        <a class="card tilt-card reveal-card delay-100" href="portfolio-detail.html?project=login" target="_blank">
           <img src="https://placehold.co/600x400/1e293b/FFF?text=Login+System" alt="Project 2">
           <div class="card-overlay">
             <div class="card-tags"><span>PHP</span><span>MySQL</span></div>
             <div class="card-t">Member Login System</div>
           </div>
         </a>
-        <a class="card tilt-card reveal-card delay-200" href="#" target="_blank">
+        <a class="card tilt-card reveal-card delay-200" href="portfolio-detail.html?project=network" target="_blank">
           <img src="https://placehold.co/600x400/1e293b/FFF?text=Network+Design" alt="Project 3">
           <div class="card-overlay">
             <div class="card-tags"><span>Cisco</span><span>Packet Tracer</span></div>
             <div class="card-t">Network Infrastructure Design</div>
           </div>
         </a>
-        <a class="card tilt-card reveal-card delay-300" href="#" target="_blank">
+        <a class="card tilt-card reveal-card delay-300" href="portfolio-detail.html?project=inventory" target="_blank">
           <img src="https://placehold.co/600x400/1e293b/FFF?text=Inventory+App" alt="Project 4">
           <div class="card-overlay">
             <div class="card-tags"><span>AppSheet</span><span>No-Code</span></div>
             <div class="card-t">Inventory Management</div>
           </div>
+        </a>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="portfolio-detail.html?section=cert" class="btn btn-primary" style="background:var(--accent);">
+            <i class="fa-solid fa-award"></i> View Certifications & Courses
         </a>
       </div>
     </div>
@@ -238,10 +248,10 @@
   <button class="chat-btn" id="openModal">Let's Chat!</button>
   <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
-  <div id="stickyProfile" class="sticky-profile">
-    <img src="assets/compressed_image.jpg" alt="Profile">
+  <a href="#about" id="stickyProfile" class="sticky-profile" aria-label="Go to About Section">
+    <img src="assets/profile.jpg" alt="Profile">
     <span class="name">Sorasak Sonkrai</span>
-  </div>
+  </a>
 
   <div id="qrModal" class="modal">
     <div class="modal-content">
@@ -256,6 +266,7 @@
     <div class="container">© <span id="year"></span> Sorasak Sonkrai</div>
   </footer>
 
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
