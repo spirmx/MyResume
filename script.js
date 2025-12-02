@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
   // ------------------- 1. Typing Effect -------------------
   const typingElement = document.getElementById("typing-text");
   const roles = ["IT Student.", "Cybersecurity Enthusiast.", "Network Lover.", "Future Developer."];
@@ -36,23 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ------------------- 2. Scroll Animation & Progress Bar -------------------
   const progressBar = document.getElementById("progress-bar");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        
-        // Trigger Skill Bar Animation
-        if (entry.target.id === "skills") {
-          document.querySelectorAll(".bar-fill").forEach(bar => {
-            bar.style.width = bar.getAttribute("data-width");
-          });
+
+  let observer = null;
+  if (typeof IntersectionObserver !== "undefined") {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          
+          // Trigger Skill Bar Animation
+          if (entry.target.id === "skills") {
+            document.querySelectorAll(".bar-fill").forEach(bar => {
+              bar.style.width = bar.getAttribute("data-width");
+            });
+          }
         }
-      }
-    });
-  }, { threshold: 0.15 });
-  
-  // Observe elements for the reveal animation
-  document.querySelectorAll(".reveal, .reveal-left, .reveal-card, .reveal-scale, #skills").forEach(el => observer.observe(el));
+      });
+    }, { threshold: 0.15 });
+
+    document
+      .querySelectorAll(".reveal, .reveal-left, .reveal-card, .reveal-scale, #skills")
+      .forEach(el => observer.observe(el));
+  }
 
   // ------------------- 3. Navbar, Sticky Logic & Progress Calculation -------------------
   const navbar = document.querySelector(".navbar");
@@ -60,39 +64,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTop = document.getElementById("backToTop");
   const avatarWrap = document.querySelector(".avatar-wrap");
   
-  if (avatarWrap) avatarWrap.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out'; 
+  if (avatarWrap) {
+    avatarWrap.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
+  }
 
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
     
-    // Navbar Shadow
-    navbar.style.boxShadow = y > 50 ? "0 4px 20px rgba(0,0,0,0.1)" : "none";
+    // Navbar Shadow (กัน error ถ้าไม่มี navbar)
+    if (navbar) {
+      navbar.style.boxShadow = y > 50 ? "0 4px 20px rgba(0,0,0,0.1)" : "none";
+    }
     
-    // Sticky Profile & BackToTop Show/Hide
-    if (y > 400) {
-      stickyProfile.classList.add("show");
-      backToTop.classList.add("show");
-    } else {
-      stickyProfile.classList.remove("show");
-      backToTop.classList.remove("show");
+    // Sticky Profile & BackToTop Show/Hide (กัน error ถ้า element ไม่มี)
+    if (stickyProfile) {
+      if (y > 400) {
+        stickyProfile.classList.add("show");
+      } else {
+        stickyProfile.classList.remove("show");
+      }
+    }
+
+    if (backToTop) {
+      if (y > 400) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
     }
 
     // Avatar Wrap Hide (ป้องกันการทับซ้อน)
     if (avatarWrap) {
-        if (y > 350) { 
-            avatarWrap.style.opacity = '0';
-            avatarWrap.style.pointerEvents = 'none'; 
-        } else {
-            avatarWrap.style.opacity = '1';
-            avatarWrap.style.pointerEvents = 'auto'; 
-        }
+      if (y > 350) { 
+        avatarWrap.style.opacity = '0';
+        avatarWrap.style.pointerEvents = 'none'; 
+      } else {
+        avatarWrap.style.opacity = '1';
+        avatarWrap.style.pointerEvents = 'auto'; 
+      }
     }
 
     // Scroll Progress Calculation
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scrollTop / scrollHeight) * 100;
-    if(progressBar) progressBar.style.width = scrolled + "%";
+    const scrolled = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    if (progressBar) {
+      progressBar.style.width = scrolled + "%";
+    }
   });
 
   // ------------------- 4. 3D Tilt Effect for Cards -------------------
@@ -121,11 +139,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile Nav Toggle
   const navToggle = document.getElementById('navToggle');
   const links = document.querySelector('.links');
-  if(navToggle) navToggle.addEventListener('click', () => links.classList.toggle('open'));
+  if (navToggle && links) {
+    navToggle.addEventListener('click', () => links.classList.toggle('open'));
+  }
 
   // Language Toggle
   const btnLang = document.getElementById("langToggle");
-  if(btnLang) {
+  if (btnLang) {
     btnLang.addEventListener("click", () => {
       const isTH = btnLang.textContent === "EN";
       document.querySelectorAll(".lang-th").forEach(el => el.style.display = isTH ? "none" : "block");
@@ -138,17 +158,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("qrModal");
   const openModal = document.getElementById("openModal");
   const closeModal = document.getElementById("closeModal");
-  if(openModal && modal) {
+  if (openModal && modal && closeModal) {
     openModal.addEventListener("click", () => modal.style.display = "flex");
     closeModal.addEventListener("click", () => modal.style.display = "none");
-    window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
   }
 
-  // Set Current Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Set Current Year (กัน error ถ้าไม่มี element)
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
   
   // Back to Top Function
-  if(backToTop) backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (backToTop) {
+    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 });
 
 // Contact Form Submission

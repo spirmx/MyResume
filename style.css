@@ -546,7 +546,7 @@ ul {
   display: block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.1s ease-out, box-shadow 0.3s;
-  background: #0f172a; /* ใช้สีเดียวกับพื้นหลัง Navbar */
+  background: #0f172a;
 }
 
 .card img {

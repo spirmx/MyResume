@@ -1,5 +1,3 @@
-// data.js
-
 // ข้อมูล Portfolio ทั้งหมด
 const projects = {
     'papaya': {
@@ -7,7 +5,6 @@ const projects = {
         desc: 'โปรเจกต์ร้านค้าออนไลน์จำลองสำหรับขายสินค้า ได้ฝึกฝนการใช้ HTML, CSS และ JavaScript เพื่อสร้างหน้าเว็บที่ตอบสนองต่อการใช้งานได้ดี (Responsive Design).',
         tools: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
         img: 'https://placehold.co/800x500/1e293b/FFF?text=PAPAYA+SHOP+MOCKUP',
-        // *** ลิงก์ผลงานจริง: จะถูกนำไปแสดงใน Iframe ในหน้า Detail ***
         link: 'https://spirmx.github.io/PAPAYA-PogPog/', 
         longDesc: "เป็นโปรเจกต์ที่มุ่งเน้นการสร้างประสบการณ์ผู้ใช้ที่ดีตั้งแต่ต้นจนจบ ตั้งแต่หน้าสินค้า ไปจนถึงหน้าตะกร้าสินค้า โดยใช้ CSS Grid และ Flexbox เป็นหลักในการจัดวาง เพื่อให้เว็บไซต์ดูดีบนทุกอุปกรณ์"
     },
@@ -39,7 +36,6 @@ const projects = {
 
 // ข้อมูล Certifications ทั้งหมด
 const certifications = [
-    // หากต้องการเพิ่มใบเซอร์ ให้คัดลอกส่วนนี้
     { name: "Cisco Networking Essentials", org: "Cisco Networking Academy", date: "2024", verifyLink: "#", img: "https://placehold.co/600x400/3b82f6/FFF?text=CISCO+CERT" },
     { name: "Python for Beginners", org: "Codecademy", date: "2023", verifyLink: "#", img: "https://placehold.co/600x400/f59e0b/FFF?text=PYTHON+CERT" },
     { name: "Cybersecurity Fundamentals", org: "IBM", date: "2024", verifyLink: "#", img: "https://placehold.co/600x400/10b981/FFF?text=CYBER+CERT" }

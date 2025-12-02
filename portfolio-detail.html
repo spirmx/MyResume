@@ -25,7 +25,7 @@
         /* สไตล์สำหรับ Iframe Display */
         .project-display {
             width: 100%;
-            height: 500px; /* กำหนดความสูงสำหรับแสดงเว็บไซต์ตัวอย่าง */
+            height: 500px;
             border: 1px solid var(--line);
             border-radius: 10px;
             overflow: hidden;
@@ -46,8 +46,7 @@
 <body>
     <header class="navbar" style="position: static;"></header>
 
-    <div id="content-display">
-        </div>
+    <div id="content-display"></div>
 
     <footer class="footer">
         <div class="container">© <span id="year"></span> Sorasak Sonkrai</div>
@@ -55,15 +54,20 @@
     
     <script src="data.js"></script>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
 
         const navbar = document.querySelector(".navbar");
-        navbar.innerHTML = `
+        if (navbar) {
+          navbar.innerHTML = `
             <div class="container nav-inner">
                 <a href="index.html" class="brand">SPIRMXTH<span style="color:var(--accent)">.DEV</span></a>
                 <nav class="links"><a href="index.html#portfolio"><i class="fa-solid fa-chevron-left"></i> Back to Portfolio</a></nav>
             </div>
-        `;
+          `;
+        }
         
         function getQueryParams() {
             const params = {};
@@ -76,11 +80,9 @@
             const display = document.getElementById('content-display');
 
             if (params.project && projects[params.project]) {
-                // แสดงรายละเอียดโปรเจกต์
                 const p = projects[params.project];
                 const toolsHtml = p.tools.map(t => `<span>${t}</span>`).join('');
                 
-                // *** สร้าง HTML สำหรับการแสดงผล: ใช้ Iframe หากมีลิงก์ผลงานจริง ***
                 let mediaDisplay;
                 if (p.link && p.link !== 'https://spirmx.github.io/MyResume') {
                     mediaDisplay = `<div class="project-display"><iframe src="${p.link}" title="${p.title} Live Demo"></iframe></div>`;
@@ -106,7 +108,6 @@
                     </section>
                 `;
             } else if (params.section === 'cert') {
-                // แสดงใบ Certifications
                 const certHtml = certifications.map(c => `
                     <div class="cert-card">
                         <img src="${c.img}" alt="${c.name}">
@@ -132,7 +133,6 @@
                     </section>
                 `;
             } else {
-                // กรณีไม่พบ
                 display.innerHTML = `
                     <section class="detail-header">
                         <div class="container">
