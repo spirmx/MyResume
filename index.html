@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Sorasak Sonkrai - IT Student & Cybersecurity Enthusiast">
   <title>Sorasak Sonkrai — Portfolio</title>
-  
+
   <link rel="icon" href="assets/profile.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -39,8 +39,8 @@
   </header>
 
   <section id="home" class="hero">
-    <div class="hero-bg"></div> 
-    <div class="hero-overlay"></div> 
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="particles">
         <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
         <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
@@ -48,7 +48,7 @@
 
     <div class="container hero-inner" style="z-index: 10;">
       <h1 class="title animate-pop-in">SORASAK SONKRAI</h1>
-      
+
       <p class="subtitle animate-fade-in-up delay-100">
         <span class="spu-badge">
           <span class="from">Student at</span>
@@ -79,7 +79,7 @@
         </div>
         <div class="lang-en" style="display:none">
           <p>
-            Hi! I’m <strong>Sorasak Sonkrai</strong>, an IT student passionate about <strong>Cybersecurity</strong> and <strong>Network Infrastructure</strong>. I enjoy turning challenges into experience and am always eager to learn new technologies for real-world application.
+            Hi! I'm <strong>Sorasak Sonkrai</strong>, an IT student passionate about <strong>Cybersecurity</strong> and <strong>Network Infrastructure</strong>. I enjoy turning challenges into experience and am always eager to learn new technologies for real-world application.
           </p>
         </div>
 
@@ -139,28 +139,43 @@
       <div class="skill-categories">
         <div class="skill-box reveal-scale">
           <div class="skill-head"><i class="fa-solid fa-code cat-icon cat-frontend"></i><h3>Frontend</h3></div>
-          <!-- แก้ BUG: li ซ้อนกัน -->
           <ul>
-            <li>HTML5 / CSS3</li>
-            <li>JavaScript</li>
-            <li>Bootstrap</li>
+            <li><i class="fa-brands fa-html5" style="color:#e34f26"></i> HTML5</li>
+            <li><i class="fa-brands fa-css3-alt" style="color:#1572b6"></i> CSS3</li>
+            <li><i class="fa-brands fa-js" style="color:#e8b71a"></i> JavaScript</li>
+            <li><i class="fa-brands fa-bootstrap" style="color:#7952b3"></i> Bootstrap</li>
           </ul>
         </div>
         <div class="skill-box reveal-scale delay-100">
           <div class="skill-head"><i class="fa-solid fa-server cat-icon cat-backend"></i><h3>Backend</h3></div>
-          <ul><li>PHP</li><li>Python</li><li>Java (Basic)</li></ul>
+          <ul>
+            <li><i class="fa-brands fa-php" style="color:#777bb4"></i> PHP</li>
+            <li><i class="fa-brands fa-python" style="color:#3776ab"></i> Python</li>
+            <li><i class="fa-brands fa-java" style="color:#e76f00"></i> Java (Basic)</li>
+          </ul>
         </div>
         <div class="skill-box reveal-scale delay-200">
           <div class="skill-head"><i class="fa-solid fa-database cat-icon cat-database"></i><h3>Database</h3></div>
-          <ul><li>MySQL</li><li>AppSheet</li></ul>
+          <ul>
+            <li><i class="fa-solid fa-database" style="color:#00758f"></i> MySQL</li>
+            <li><i class="fa-solid fa-table-cells" style="color:#34a853"></i> AppSheet</li>
+          </ul>
         </div>
         <div class="skill-box reveal-scale delay-300">
           <div class="skill-head"><i class="fa-solid fa-shield-halved cat-icon cat-tools"></i><h3>Security & Tools</h3></div>
-          <ul><li>Kali Linux</li><li>Cisco Packet Tracer</li><li>Git / GitHub</li></ul>
+          <ul>
+            <li><i class="fa-brands fa-linux" style="color:#557c94"></i> Kali Linux</li>
+            <li><i class="fa-solid fa-network-wired" style="color:#1ba0d7"></i> Cisco Packet Tracer</li>
+            <li><i class="fa-brands fa-git-alt" style="color:#f05032"></i> Git / GitHub</li>
+          </ul>
         </div>
-        <div class="skill-box reveal-scale delay-400"> 
+        <div class="skill-box reveal-scale delay-400">
           <div class="skill-head"><i class="fa-solid fa-robot cat-icon cat-ai"></i><h3>AI/LLM Use</h3></div>
-          <ul><li>Prompt Engineering</li><li>Google Gemini (Use)</li><li>Open Source AI (Basic)</li></ul>
+          <ul>
+            <li><i class="fa-solid fa-wand-magic-sparkles" style="color:#6d28d9"></i> Prompt Engineering</li>
+            <li><i class="fa-brands fa-google" style="color:#4285f4"></i> Google Gemini (Use)</li>
+            <li><i class="fa-solid fa-robot" style="color:#4c5fd5"></i> Open Source AI (Basic)</li>
+          </ul>
         </div>
       </div>
 
@@ -240,7 +255,7 @@
           <li class="contact-item"><i class="contact-icon icon-loc fa-solid fa-location-dot"></i> Bangkok, Thailand</li>
         </ul>
       </div>
-      
+
       <form class="contact-form" onsubmit="return sendMsg(event)">
         <input type="text" name="name" placeholder="ชื่อของคุณ" required>
         <input type="email" name="email" placeholder="อีเมล" required>
