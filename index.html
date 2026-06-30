@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Portfolio of Sorasak Sonkrai — IT Student & Cybersecurity Enthusiast" />
+  <title>Sorasak Sonkrai — Interactive Resume</title>
+
+  <link rel="icon" href="assets/profile.jpg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-aurora aurora-1"></div>
+    <div class="bg-aurora aurora-2"></div>
+    <div class="bg-aurora aurora-3"></div>
+    <canvas id="particles"></canvas>
+  </div>
+
+  <div id="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">LOADING<span class="dots"></span></div>
+  </div>
+
+  <div id="slide-progress"><div id="slide-progress-bar"></div></div>
+
+  <header class="topbar">
+    <a class="brand" data-goto="0" id="brandBtn"></a>
+    <div class="topbar-actions">
+      <a id="cvBtn" class="chip" href="#" target="_blank"><i class="fa-solid fa-download"></i><span>Resume</span></a>
+      <button id="langToggle" class="chip">EN</button>
+      <button id="themeToggle" class="chip icon-only" title="เปลี่ยนธีมสี"><span class="theme-dot"></span><i class="fa-solid fa-palette"></i></button>
+    </div>
+  </header>
+
+  <nav id="dots" class="dots-nav"></nav>
+
+  <main id="deck" class="deck"></main>
+
+  <div class="arrows">
+    <button id="prevBtn" class="arrow" aria-label="Previous"><i class="fa-solid fa-chevron-up"></i></button>
+    <button id="nextBtn" class="arrow" aria-label="Next"><i class="fa-solid fa-chevron-down"></i></button>
+  </div>
+
+  <div id="scrollHint" class="scroll-hint">
+    <i class="fa-solid fa-computer-mouse"></i>
+    <span>เลื่อน / กดลูกศร เพื่อดูต่อ</span>
+  </div>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="qrModal" class="modal">
+    <div class="modal-card qr-card">
+      <button class="modal-close" id="qrClose">&times;</button>
+      <h3>Scan to Chat</h3>
+      <img id="qrImg" src="" alt="LINE QR" class="qr-img" />
+      <p class="line-id" id="lineId"></p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
